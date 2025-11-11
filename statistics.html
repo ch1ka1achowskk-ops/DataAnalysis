@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика | Анализ ВУЗов 2024</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a class="nav-brand" href="index.html">Анализ ВУЗов</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="statistics.html" class="nav-link active">Статистика</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <div class="controls">
+                <label for="indicator-select">Выбрать показатель:</label>
+                <div class="select-wrapper">
+                    <select id="indicator-select">
+                        <option value="prognoz_Total" data-unit="баллов">🏆 Общая Статистика (Итоговый балл)</option>
+                        <option value="prognoz_EGE.json" data-unit="балла">Средний балл ЕГЭ</option>
+                        <option value="prognoz_Studenti.json" data-unit="студентов">Общая численность студентов</option>
+                        <option value="prognoz_NIOKR.json" data-unit="руб.">Объем НИОКР (средства)</option>
+                        <option value="prognoz_Publikacii.json" data-unit="публикаций">Число публикаций (на 100 НПР)</option>
+                        <option value="prognoz_UchenieStepeni.json" data-unit="%">Доля ППС с ученой степенью</option>
+                        <option value="prognoz_Zarplata.json" data-unit="руб.">Средняя зарплата ППС</option>
+                        <option value="prognoz_Inostranci.json" data-unit="студентов">Численность иностранных студентов</option>
+                        <option value="prognoz_Obshejitia.json" data-unit="кв. м.">Площадь общежитий</option>
+                        <option value="prognoz_Dohodi.json" data-unit="руб.">Доходы вуза (все источники)</option>
+                        <option value="prognoz_DohodiVnebajet.json" data-unit="%">Доля внебюджетных доходов</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="view-container">
+                </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

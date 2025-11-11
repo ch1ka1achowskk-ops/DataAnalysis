@@ -3,52 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Хакатон: Прогноз по ВУЗам 2024</title>
+    <title>Анализ ВУЗов 2024</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1>Прогноз по ВУЗам 2024</h1>
-            <p>Анализ трендов 2014-2021гг. и прогноз на 2024г.</p>
-        </header>
-
-        <main>
-            <div class="controls">
-                <label for="indicator-select">Выбрать показатель:</label>
-                <div class="select-wrapper">
-                    <select id="indicator-select">
-                        <option value="prognoz_EGE.json" data-unit="балла">Средний балл ЕГЭ</option>
-                        <option value="prognoz_Studenti.json" data-unit="студентов">Общая численность студентов</option>
-                        <option value="prognoz_NIOKR.json" data-unit="руб.">Объем НИОКР (средства)</option>
-                        <option value="prognoz_Publikacii.json" data-unit="публикаций">Число публикаций (на 100 НПР)</option>
-                        <option value="prognoz_UchenieStepeni.json" data-unit="%">Доля ППС с ученой степенью</option>
-                        <option value="prognoz_Zarplata.json" data-unit="руб.">Средняя зарплата ППС</option>
-                        <option value="prognoz_Inostranci.json" data-unit="студентов">Численность иностранных студентов</option>
-                        <option value="prognoz_Obshejitia.json" data-unit="кв. м.">Площадь общежитий</option>
-                        <option value="prognoz_Dohodi.json" data-unit="руб.">Доходы вуза (все источники)</option>
-                        <option value="prognoz_DohodiVnebajet.json" data-unit="%">Доля внебюджетных доходов</option>
-                    </select>
-                </div>
+    
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a class="nav-brand" href="index.html">Анализ ВУЗов</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Главная</a>
+                <a href="statistics.html" class="nav-link">Статистика</a>
             </div>
+        </div>
+    </nav>
 
-            <div class="results-grid">
-                <div class="results-column card">
-                    <h2>📈 Растущие ВУЗы</h2>
-                    <div id="growing-container" class="results-list"></div>
-                </div>
-                <div class="results-column card">
-                    <h2>📉 Падающие ВУЗы</h2>
-                    <div id="falling-container" class="results-list"></div>
-                </div>
-            </div>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Прогнозирование трендов ВУЗов 2024</h1>
+            <p class="hero-subtitle">
+                Анализ данных мониторинга за 2014-2021 гг. и построение прогнозов 
+                с помощью линейной регрессии.
+            </p>
+            <a href="statistics.html" class="hero-button">Перейти к статистике</a>
+        </div>
+    </header>
 
-            <div id="zero-container" class="card zero-list">
-                 </div>
-        </main>
-    </div>
-
-    <script src="app.js"></script>
 </body>
 </html>
