@@ -1,36 +1,24 @@
 const xlsx = require('xlsx');
 const path = require('path');
 
-// ==========================================================
-// ⚠️ НАСТРОЙКА: Укажи имя ОДНОГО из твоих Excel-файлов
-// ==========================================================
-const FILE_TO_CHECK = 'result2022.xlsx'; // 👈 Замени это
-// ==========================================================
+const FILE_TO_CHECK = 'result2022.xlsx'; 
 
 const filePath = path.join(__dirname, FILE_TO_CHECK);
 
 try {
     console.log(`🔎 Читаю файл: ${FILE_TO_CHECK}...`);
-    
-    // 1. Читаем файл
     const workbook = xlsx.readFile(filePath);
-    
-    // 2. Берем первый лист
     const sheetName = workbook.SheetNames[0];
     const sheet = workbook.Sheets[sheetName];
     
-    // 3. Конвертируем лист в массив, где `header: 1` 
-    //    означает, что первая строка (заголовки) будет первым элементом массива
     const data = xlsx.utils.sheet_to_json(sheet, { header: 1 });
 
     if (data.length > 0) {
-        // 4. Берем самую первую строку (это и есть наши заголовки)
         const headers = data[0];
         
         console.log('✅ Нашел следующие столбцы в твоем файле:');
         console.log('============================================');
         
-        // 5. Выводим их в виде красивого списка
         headers.forEach((headerName, index) => {
             console.log(` ${String(index + 1).padStart(3)}. ${headerName}`);
         });
