@@ -9,8 +9,9 @@
     --color-text-header: #FFFFFF;
     --color-text-dim: #888888;
 
-    --color-green: #00E676; 
+    --color-green: #00E676;
     --color-red: #FF3B30;
+
     --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.15);
     --shadow-deep: 0 10px 30px rgba(0, 0, 0, 0.3);
     
@@ -35,7 +36,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    
 }
 
 .navbar {
@@ -91,10 +91,10 @@ body {
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 200px 40px;
+    padding: 120px 40px;
     text-align: center;
-    ;
- 
+    border-radius: var(--border-radius-main);
+    margin: 20px;
     box-shadow: var(--shadow-deep);
     overflow: hidden;
 }
@@ -131,7 +131,7 @@ body {
 .page-content {
     background-color: var(--color-card);
     border-radius: var(--border-radius-main);
-    padding: 20px 30px;
+    padding: 40px;
     margin: 30px 20px;
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--color-border);
@@ -160,10 +160,12 @@ body {
 }
 
 .controls {
+    text-align: center;
+    margin: 40px 0;
     display: flex;
+
     justify-content: center;
     align-items: center;
-    margin: 40px 0;
 }
 .controls label {
     font-weight: 600;

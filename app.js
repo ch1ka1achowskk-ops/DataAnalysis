@@ -15,6 +15,7 @@ const DATA_FILES = {
 };
 const fileNames = Object.keys(DATA_FILES);
 
+
 const twoColumnLayout = `
     <div class="results-grid">
         <div class="results-column card">
@@ -35,7 +36,6 @@ const twoColumnLayout = `
 
 async function calculateAndShowTotalScore(unit) {
     viewContainer.innerHTML = twoColumnLayout; 
-    
     document.getElementById('growing-title').innerText = '📈 Положительный балл';
     document.getElementById('falling-title').innerText = '📉 Отрицательный балл';
 
@@ -43,7 +43,6 @@ async function calculateAndShowTotalScore(unit) {
     const fallingContainer = document.getElementById('falling-container');
     const zeroContainer = document.getElementById('zero-container');
     zeroContainer.style.display = 'none'; 
-
     growingContainer.innerHTML = '<p class="loading">Расчет итогового балла...</p>';
     fallingContainer.innerHTML = '<p class="loading">Это может занять несколько секунд...</p>';
     
@@ -97,7 +96,6 @@ async function calculateAndShowTotalScore(unit) {
         viewContainer.innerHTML = `<p class="loading" style="color: red;">Ошибка: ${error.message}</p>`;
     }
 }
-
 async function loadSingleIndicator(fileName, unit) {
     viewContainer.innerHTML = twoColumnLayout; 
     document.getElementById('growing-title').innerText = '📈 Растущие ВУЗы';
@@ -140,7 +138,6 @@ async function loadSingleIndicator(fileName, unit) {
         fallingContainer.innerHTML = '';
     }
 }
-
 function renderList(container, vuzs, unit, trend) {
     if (vuzs.length === 0) {
         container.innerHTML = '<p class="loading">Нет данных</p>';
@@ -149,6 +146,7 @@ function renderList(container, vuzs, unit, trend) {
     if (trend === 'growing') {
         vuzs.sort((a, b) => b.forecast - a.forecast);
     } else {
+        
         vuzs.sort((a, b) => a.forecast - b.forecast);
     }
     container.innerHTML = '';

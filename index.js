@@ -10,7 +10,8 @@ const FILES_TO_PROCESS = [
     { name: 'result2022.xlsx', year: 2021 },
 ];
 
-const COLUMN_TO_FORECAST = 'Доля доходов вуза из внебюджетных источников';   
+const COLUMN_TO_FORECAST = 'Доля доходов вуза из внебюджетных источников';
+
 const OUTPUT_FILENAME = 'prognoz_DohodiVnebajet.json';
 
 const COLUMN_ID = 'ID';
@@ -68,13 +69,13 @@ async function runForecast() {
             const regressionModel = ss.linearRegression(vuz.data);
             const predictFunction = ss.linearRegressionLine(regressionModel);
             const forecastValue = predictFunction(FORECAST_YEAR);
-            const slope = regressionModel.m; // <--- ВОТ ГЛАВНОЕ ИЗМЕНЕНИЕ
+            const slope = regressionModel.m; 
 
             results.push({
                 id: id,
                 name: vuz.name,
                 forecast: parseFloat(forecastValue.toFixed(2)),
-                slope: slope // <--- МЫ ЕГО СОХРАНЯЕМ
+                slope: slope 
             });
 
         } catch (error) {
