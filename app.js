@@ -154,7 +154,7 @@ function renderList(container, vuzs, unit, trend) {
         const item = document.createElement('div');
         item.className = 'result-item';
         let formattedForecast;
-        if (unit === 'баллов') {
+        if (unit === 'пунктов') {
              formattedForecast = vuz.forecast.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
         } else {
              formattedForecast = vuz.forecast.toLocaleString('ru-RU');
